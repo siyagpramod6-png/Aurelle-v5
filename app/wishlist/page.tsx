@@ -1,0 +1,1 @@
+import Link from 'next/link'; export default function Wishlist(){return <main className="simplePage"><Link href="/">← HOME</Link><h1>Wishlist</h1><p>Sign in to save your favourite AURELLE pieces. Wishlist persistence is ready to connect to Supabase.</p></main>}

@@ -1,0 +1,3 @@
+'use client';
+import {useState} from 'react'; import Link from 'next/link';
+export default function Account(){const [email,setEmail]=useState('');return <main className="simplePage"><Link href="/">← HOME</Link><h1>My Account</h1><p>Customer account access will use Supabase Auth.</p><form className="checkoutForm" onSubmit={e=>{e.preventDefault();alert('Connect Supabase Auth to enable email OTP sign-in.')}}><label>Email address<input type="email" required value={email} onChange={e=>setEmail(e.target.value)}/></label><button className="goldButton">CONTINUE WITH EMAIL</button></form><p className="catalogNote">Email OTP is a planned integration; configure Supabase Auth and redirect URLs before launch.</p></main>}

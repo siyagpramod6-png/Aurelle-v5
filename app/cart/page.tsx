@@ -1,0 +1,3 @@
+'use client';
+import Link from 'next/link'; import {useCart} from '@/components/CartProvider';
+export default function Cart(){const {items,remove,total,count}=useCart();return <main className="simplePage"><Link href="/">← CONTINUE SHOPPING</Link><h1>Your Bag ({count})</h1>{items.length===0?<p>Your bag is waiting for something exceptional.</p>:items.map(x=><div className="cartRow" key={x.product.id}><div><b>{x.product.name}</b><p>Qty: {x.qty} · ₹{x.product.price.toLocaleString('en-IN')}</p></div><button onClick={()=>remove(x.product.id)}>Remove</button></div>)}<h2>Subtotal: ₹{total.toLocaleString('en-IN')}</h2><p>Shipping and taxes are calculated at checkout.</p><Link className="goldButton" href="/checkout">PROCEED TO CHECKOUT</Link></main>}
